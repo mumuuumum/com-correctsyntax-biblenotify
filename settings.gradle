@@ -4,16 +4,6 @@ pluginManagement {
         mavenCentral()
         google()
     }
-    buildscript {
-        repositories {
-            mavenCentral()
-            google()
-        }
-        dependencies {
-            // 强制使用修复版本的 R8（例如 8.1.44）
-            classpath 'com.android.tools:r8:8.1.44'
-        }
-    }
 }
 
 include ':app'
