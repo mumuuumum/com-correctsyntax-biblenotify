@@ -32,9 +32,17 @@ android {
 
 dependencies { 
     implementation('pl.droidsonroids.gif:android-gif-drawable:1.2.29')
-    implementation('androidx.appcompat:appcompat:1.6.1')
-    implementation('com.google.android.material:material:1.13.0')
     implementation('androidx.constraintlayout:constraintlayout:2.1.4')
+    implementation("androidx.appcompat:appcompat:1.6.1") {
+        force = true
+    }
+    implementation("androidx.appcompat:appcompat-resources:1.6.1") {
+        force = true
+    }
+    // 如果你用了 material，也建议一起降（1.13.0 同样问题大）
+    implementation("com.google.android.material:material:1.12.0") {
+        force = true
+    }
 }
 configurations.all {
     resolutionStrategy {
