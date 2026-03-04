@@ -8,9 +8,6 @@ pluginManagement {
         repositories {
             mavenCentral()
             google()
-            maven {
-                url = uri("https://storage.googleapis.com/r8-releases/raw")
-            }
         }
         dependencies {
             // 强制使用修复版本的 R8（例如 8.1.44）
