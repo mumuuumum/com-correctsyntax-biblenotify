@@ -1,35 +1,37 @@
-plugins {
-    id 'com.android.application'
+plugins { 
+    id('com.android.application')
 }
-
-android {
-    namespace 'com.correctsyntax.biblenotify'
-    compileSdk 36
-
-    defaultConfig {
+android { 
+    ndkVersion('23.2.0')
+    namespace('com.correctsyntax.biblenotify')
+    compileSdk(36)
+    defaultConfig { 
+        externalNativeBuild { 
+            ndk { 
+                abiFilters('riscv64')
+            }
+        }
         applicationId "com.correctsyntax.biblenotify"
-        minSdkVersion 21
-        targetSdk 36
-        versionCode 22
-        versionName '4.11.0'
+        minSdkVersion(29)
+        targetSdk(36)
+        versionCode(22)
+        versionName('4.11.0')
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    buildTypes { 
+        release { 
+            minifyEnabled(false)
+            proguardFiles(getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro')
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    compileOptions { 
+        sourceCompatibility(JavaVersion.VERSION_1_8)
+        targetCompatibility(JavaVersion.VERSION_1_8)
     }
-    namespace 'com.correctsyntax.biblenotify'
+    namespace('com.correctsyntax.biblenotify')
 }
-
-dependencies {
-    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.29'
-    implementation 'androidx.appcompat:appcompat:1.7.1'
-    implementation 'com.google.android.material:material:1.13.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+dependencies { 
+    implementation('pl.droidsonroids.gif:android-gif-drawable:1.2.29')
+    implementation('androidx.appcompat:appcompat:1.7.1')
+    implementation('com.google.android.material:material:1.13.0')
+    implementation('androidx.constraintlayout:constraintlayout:2.2.1')
 }
